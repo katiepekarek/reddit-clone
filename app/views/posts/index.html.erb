@@ -1,7 +1,10 @@
 <% if current_user %>
-Welcome <%= current_user.name %>!
+  Welcome <%= current_user.name %>!
+  <br>
+  <%= link_to "Make a Post", new_post_path %>
+  <br>
 <% else %>
-Welcome! You must Sign Up/Sign In to post.
+  Welcome! You must Sign Up/Sign In to post.
 <% end %>
 <br>
 Posts:
@@ -9,8 +12,8 @@ Posts:
 
 <% @posts.each do |post| %>
   <br>
-  <%= post.title %>
+  <%= link_to "#{post.title}", post_path(post) %>
   <br>
-  <%= post.content %>
+
   <br>
 <% end %>
