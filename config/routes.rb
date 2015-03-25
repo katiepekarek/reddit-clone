@@ -7,6 +7,9 @@ root 'posts#index'
 
 get 'sign-up', to: "registrations#new"
 post 'sign-up', to: "registrations#create"
+get "sign-in", to: "authentications#new"
+post "sign-in", to: "authentications#create"
+get "sign-out", to: "authentications#destroy"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

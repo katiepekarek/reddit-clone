@@ -1,0 +1,14 @@
+Sign In Page
+<br>
+
+<%= form_tag sign_in_path do %>
+
+<%= label_tag :name %>
+<%= text_field_tag :name %>
+<br>
+<%= label_tag :password %>
+<%= password_field_tag :password %>
+<br>
+<%= submit_tag "Sign In" %>
+
+<% end %>
