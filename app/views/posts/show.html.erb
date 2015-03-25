@@ -9,3 +9,26 @@
 <%= link_to "Edit Post", edit_post_path(@post) %>
 <br>
 <%= link_to "Delete Post", post_path(@post), method: :delete %>
+
+
+<br>
+Please make a comment:
+<br>
+<%= form_for [@post,@comment] do |f|%>
+  <br>
+  <%= f.label :comment_content, "Comment:" %>
+  <%= f.text_field :comment_content %>
+  <br>
+  <%= f.submit "Add Comment"%>
+  <br>
+<% end %>
+
+All Comments:
+
+<% @post.comments.each do |comment| %>
+  <br>
+  <%= comment.comment_content %>
+  <br>
+  <%= comment.user.name %>, <%= comment.created_at %>
+  <br>
+<% end %>
