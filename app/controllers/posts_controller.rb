@@ -11,9 +11,9 @@ class PostsController < ApplicationController
 
   def create
     @post=Post.new(post_params)
-    @post.owner_id = current_user.id
+    owner=Owner.create(user_id: current_user.id)
+    @post.owner_id = owner.id
     if @post.save
-      Owner.create(user_id: current_user)
       flash[:notice]="Post successfully created!"
       redirect_to post_path(@post)
     else
@@ -37,14 +37,13 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment=Comment.new
     @post=Post.find(params[:id])
   end
 
   def destroy
     post = Post.find(params[:id]).destroy
     redirect_to root_path
-
-
   end
 
   private
