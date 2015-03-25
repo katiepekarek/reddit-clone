@@ -1,0 +1,13 @@
+
+Welcome <%= current_user.name %>!
+<br>
+Posts:
+<br>
+
+<% @posts.each do |post| %>
+  <br>
+  <%= post.title %>
+  <br>
+  <%= post.content %>
+  <br>
+<% end %>
