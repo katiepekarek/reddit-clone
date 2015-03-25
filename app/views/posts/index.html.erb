@@ -14,6 +14,6 @@ Posts:
   <br>
   <%= link_to "#{post.title}", post_path(post) %>
   <br>
-
+  <%= post.owner.user.name %>
   <br>
 <% end %>

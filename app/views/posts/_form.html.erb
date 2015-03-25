@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+
+<br>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br>
+<%= f.label :post_content %>
+<%= f.text_field :post_content %>
+<br>
+<%= f.submit "#{button_name} Post"%>
+
+<% end %>

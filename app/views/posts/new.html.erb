@@ -1,15 +1,4 @@
 
 Please create a post!
-
-<%= form_for @post do |f| %>
-
-  <br>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :post_content %>
-  <%= f.text_field :post_content %>
-  <br>
-  <%= f.submit "Create Post"%>
-
-<% end %>
+<br>
+<%= render partial: 'form', locals: {button_name: "Create"} %>
